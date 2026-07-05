@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: d42a5181e733fb04191550a80735affb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - intactBridge: {fileID: 7111206367980910362, guid: 3e46f4b0631f3b64d82340d32dacfa23, type: 3}
+  - brokenBridge: {fileID: 4029704258587528395, guid: aeb24624595b568488480b87ebbc1ffa, type: 3}
+  - backgroundMusic: {instanceID: 0}
+  - collapseSFX: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    /// <summary>
-    /// The virtual keyword means child scripts are allowed to override or add to this action!
-    /// </summary>
+    [Header("Audio Settings")]
+    public AudioClip collectSound; // This creates a slot in the Inspector for your sound file!
+
     public virtual void OnCollect()
     {
-        // This will destroy the 3D model from the scene when picked up
+        // 1. Check if a sound is plugged in, then play it!
+        // PlayClipAtPoint creates a temporary audio player so the sound doesn't get destroyed with the crystal.
+        if (collectSound != null)
+        {
+            AudioSource.PlayClipAtPoint(collectSound, transform.position);
+        }
+
+        // 2. Destroy the 3D model from the scene
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // If the player touches this object, trigger the OnCollect method
         if (other.CompareTag("Player"))
         {
             OnCollect();

@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    // This creates a global reference so other scripts can talk to it easily
+    public static GameManager instance;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Player Inventory")]
+    public int crystals = 0;
+    public int metalScraps = 0;
+    public bool hasSpecialOrb = false;
+
+    private void Awake()
     {
-        
+        // Sets up the global connection when the game starts
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 }
